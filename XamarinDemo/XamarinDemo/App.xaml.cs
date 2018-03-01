@@ -13,7 +13,7 @@ namespace XamarinDemo
         {
             InitializeComponent();
 
-            MainPage = new XamarinDemo.LoginPage();
+            MainPage = new XamarinDemo.ContactsPage();
         }
 
         protected override void OnStart()
