@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -27,6 +28,8 @@ namespace XamarinDemo
                 }
             }
         }
+
+        [JsonProperty("name")]
         public string Name { get; set; }
         private string _description;
         public string Description
@@ -44,6 +47,8 @@ namespace XamarinDemo
                 }
             }
         }
+
+        [JsonProperty("phone")]
         public string PhoneNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public bool IsColleague { get; set; }

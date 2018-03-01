@@ -11,7 +11,8 @@ namespace XamarinDemo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactsPage : ContentPage
     {
-        private readonly ContactService _contactService = new ContactService();
+        private static readonly App CurrentApp = Application.Current as App;
+        private readonly ContactService _contactService = new ContactService(CurrentApp.AccessToken);
 
         public ContactsPage()
         {
@@ -22,7 +23,7 @@ namespace XamarinDemo
         {
             base.OnAppearing();
 
-            contactsListView.ItemsSource = await _contactService.GetContacts();
+            contactsListView.ItemsSource = await _contactService.GetContacts(searchBar.Text);
         }
 
         private async void contactsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

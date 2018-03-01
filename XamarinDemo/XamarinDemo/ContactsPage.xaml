@@ -8,7 +8,7 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-        <SearchBar Placeholder="Find Contact" TextChanged="SearchBar_TextChanged"  />
+        <SearchBar x:Name="searchBar" Placeholder="Find Contact" TextChanged="SearchBar_TextChanged"  />
         <ListView x:Name="contactsListView" 
               ItemSelected="contactsListView_ItemSelected"
               IsPullToRefreshEnabled="True"

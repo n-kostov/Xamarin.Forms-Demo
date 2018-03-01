@@ -10,12 +10,16 @@ namespace XamarinDemo
     public partial class App : Application
     {
         private static readonly string HasReadIntroductionString = "HasReadIntroduction";
+        private static readonly string AccessTokenString = "AccessToken";
         public App()
         {
             InitializeComponent();
 
             MainPage = new HomePage();
-            MainPage.Navigation.PushModalAsync(new LoginPage());
+            if (String.IsNullOrWhiteSpace(AccessToken))
+            {
+                MainPage.Navigation.PushModalAsync(new LoginPage());
+            }
         }
 
         protected override void OnStart()
@@ -47,6 +51,23 @@ namespace XamarinDemo
             set
             {
                 Properties[HasReadIntroductionString] = value;
+            }
+        }
+
+        public string AccessToken
+        {
+            get
+            {
+                if (Properties.ContainsKey(AccessTokenString))
+                {
+                    return Properties[AccessTokenString].ToString();
+                }
+
+                return null;
+            }
+            set
+            {
+                Properties[AccessTokenString] = value;
             }
         }
     }

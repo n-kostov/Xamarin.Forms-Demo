@@ -8,5 +8,10 @@
             <local:ContactsPage  />
         </x:Arguments>
     </NavigationPage>
+    <NavigationPage Icon="search.png">
+        <x:Arguments>
+            <local:FindNewContactPage  />
+        </x:Arguments>
+    </NavigationPage>
     <local:PhoneDialPage Icon="call.png" />
 </TabbedPage>
