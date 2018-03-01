@@ -16,6 +16,7 @@ namespace XamarinDemo
         private async void Login_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new IntroductionPage());
         }
 
         protected override bool OnBackButtonPressed()

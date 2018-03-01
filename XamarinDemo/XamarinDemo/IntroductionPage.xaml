@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinDemo.IntroductionPage">
+    <ContentPage>
+        <Label Text="Welcome to Accedia.Contacts application"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center"/>
+    </ContentPage>
+    <ContentPage>
+        <Label Text="Here you can find and store your contacts"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center"/>
+    </ContentPage>
+    <ContentPage Padding="10">
+        <StackLayout>
+            <Label Text="You can also dial up numbers"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Get Started" Clicked="GetStarted_Clicked"
+                    TextColor="White" BackgroundColor="Green"
+                    VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinDemo.PhoneDialPage"
+             BackgroundColor="#354242">
+    
+    <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="phoneNumberLabel" FontSize="30" Grid.ColumnSpan="3" TextColor="#fff" HorizontalOptions="Center" />
+
+        <Button Text="1" Grid.Row="1" Grid.Column="0" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="2" Grid.Row="1" Grid.Column="1" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="3" Grid.Row="1" Grid.Column="2" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+
+        <Button Text="4" Grid.Row="2" Grid.Column="0" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="5" Grid.Row="2" Grid.Column="1" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="6" Grid.Row="2" Grid.Column="2" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+
+        <Button Text="7" Grid.Row="3" Grid.Column="0" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="8" Grid.Row="3" Grid.Column="1" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Text="9" Grid.Row="3" Grid.Column="2" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+
+        <Button Text="0" Grid.Row="4" Grid.Column="1" FontSize="15" TextColor="#28282c" BackgroundColor="#fff" BorderRadius="50" Clicked="NumberButton_Clicked" />
+        <Button Grid.Row="4" Grid.Column="2" Image="backspace.png" BackgroundColor="#fff" BorderRadius="50" Clicked="Backspace_Clicked" />
+
+        <Button Text="Dial" Grid.Row="5" Grid.ColumnSpan="3" BackgroundColor="#96ca2d" />
+    </Grid>
+</ContentPage>
