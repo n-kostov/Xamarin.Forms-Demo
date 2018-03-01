@@ -74,5 +74,15 @@ namespace XamarinDemo
         {
             contactsListView.ItemsSource = GetContacts(e.NewTextValue);
         }
+
+        private async void PlusToolbarItem_Activated(object sender, EventArgs e)
+        {
+            bool result = await DisplayAlert("Please confirm", "Do you want to add new item?", "Yes", "No");
+            if (result)
+            {
+                string choice = await DisplayActionSheet("Please choose", "Cancel", "Delete", "Send Email", "Call");
+                await DisplayAlert("Your choice is:", choice, "OK");
+            }
+        }
     }
 }

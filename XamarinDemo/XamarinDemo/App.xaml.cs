@@ -13,11 +13,7 @@ namespace XamarinDemo
         {
             InitializeComponent();
 
-            MainPage = new MasterDetailExamplePage();
-
-            // uncomment the below to see the carousel(introduction page)
-            // and tabbed page (home page)
-            //MainPage = new HomePage();
+            MainPage = new HomePage();
             //MainPage.Navigation.PushModalAsync(new LoginPage());
         }
 
