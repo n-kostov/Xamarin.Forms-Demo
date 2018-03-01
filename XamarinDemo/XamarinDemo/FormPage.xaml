@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             x:Class="XamarinDemo.FormPage">
+    <StackLayout>
+        <Switch IsToggled="{Binding SwitchToggled}" Toggled="Switch_Toggled" />
+        <Slider x:Name="slider" Maximum="255" Minimum="10" Value="50" />
+        <Label x:Name="label" Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0:N0}'}" />
+        <Stepper Increment="5" Maximum="255" Minimum="10" Value="50" ValueChanged="Stepper_ValueChanged" />
+        <Entry Keyboard="Numeric" Placeholder="Phone" IsPassword="True" Completed="Entry_Completed" TextChanged="Entry_TextChanged" />
+        <Picker Title="Items">
+            <Picker.Items>
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+            </Picker.Items>
+        </Picker>
+        <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd MMM yyy" MinimumDate="2/15/2017" MaximumDate="12/15/2017" />
+        <TimePicker />
+    </StackLayout>
+</ContentPage>

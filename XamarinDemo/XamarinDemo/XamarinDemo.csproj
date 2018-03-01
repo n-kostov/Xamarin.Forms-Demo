@@ -47,6 +47,9 @@
     <Compile Include="ContactsPage.xaml.cs">
       <DependentUpon>ContactsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormPage.xaml.cs">
+      <DependentUpon>FormPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GridPage.xaml.cs">
       <DependentUpon>GridPage.xaml</DependentUpon>
     </Compile>
@@ -164,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MasterDetailExamplePageDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
