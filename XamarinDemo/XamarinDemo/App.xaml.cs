@@ -13,7 +13,8 @@ namespace XamarinDemo
         {
             InitializeComponent();
 
-            MainPage = new XamarinDemo.ContactsPage();
+            MainPage = new NavigationPage(new ContactsPage());
+            MainPage.Navigation.PushModalAsync(new LoginPage());
         }
 
         protected override void OnStart()

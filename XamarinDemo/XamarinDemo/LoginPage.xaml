@@ -17,6 +17,6 @@
                    HorizontalOptions="EndAndExpand"
                    IsPassword="true" WidthRequest="100" />
         </StackLayout>
-        <Button Text="Login" TextColor="White" BackgroundColor="Green" />
+        <Button Text="Login" TextColor="White" BackgroundColor="Green" Clicked="Login_Clicked" />
     </StackLayout>
 </ContentPage>

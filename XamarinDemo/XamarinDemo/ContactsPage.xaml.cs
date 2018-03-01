@@ -15,9 +15,9 @@ namespace XamarinDemo
         {
             _contacts = new ObservableCollection<Contact>
             {
-                new Contact{Id = 1, Name="Gosho" },
-                new Contact{Id = 2, Name="Pesho", Description ="I like beer!" },
-                new Contact{Id = 3, Name="Tosho", Description = "Hey!" }
+                new Contact{Id = 1, DisplayName="Gosho", Name = "Georgi", PhoneNumber = "12345", DateOfBirth = new DateTime(1900, 5, 5) },
+                new Contact{Id = 2, DisplayName="Pesho", Name = "Peter", Description ="I like beer!", PhoneNumber = "4234523", DateOfBirth = new DateTime(1985, 4, 1) },
+                new Contact{Id = 3, DisplayName="Tosho", Name = "Todor", Description = "Hey!", PhoneNumber = "123125435", DateOfBirth = new DateTime(1888, 9, 3) }
             };
 
             if (string.IsNullOrWhiteSpace(searchQuery))
@@ -27,7 +27,7 @@ namespace XamarinDemo
 
             searchQuery = searchQuery.ToLowerInvariant();
             return new ObservableCollection<Contact>(
-                _contacts.Where(c => c.Name.ToLowerInvariant().StartsWith(searchQuery)));
+                _contacts.Where(c => c.DisplayName.ToLowerInvariant().StartsWith(searchQuery)));
         }
 
         public ContactsPage()
@@ -42,7 +42,7 @@ namespace XamarinDemo
             contactsListView.ItemsSource = GetContacts();
         }
 
-        private void contactsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void contactsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
             {
@@ -50,7 +50,7 @@ namespace XamarinDemo
             }
 
             var contact = e.SelectedItem as Contact;
-            DisplayAlert("Select", contact.Name, "OK");
+            await Navigation.PushAsync(new ContactDetailPage(contact));
 
             contactsListView.SelectedItem = null;
         }
