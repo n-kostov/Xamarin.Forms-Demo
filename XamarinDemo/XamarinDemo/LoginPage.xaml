@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinDemo.LoginPage"
+             BackgroundColor="LightGray">
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
+                 Orientation="Vertical">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Username" VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="usernameEntry" Placeholder="Username" 
+                   HorizontalOptions="EndAndExpand"
+                   WidthRequest="100" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Password" VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="passwordEntry" Placeholder="Password" 
+                   HorizontalOptions="EndAndExpand"
+                   IsPassword="true" WidthRequest="100" />
+        </StackLayout>
+        <Button Text="Login" TextColor="White" BackgroundColor="Green" />
+    </StackLayout>
+</ContentPage>

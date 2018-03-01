@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinDemo.AbsoluteRelativeLayoutPage">
+    <!--<RelativeLayout>
+        <BoxView BackgroundColor="Yellow" x:Name="banner"
+                RelativeLayout.HeightConstraint="{ConstraintExpression 
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=1}" />
+
+        <BoxView BackgroundColor="Aqua"
+                 WidthRequest="50"
+                 HeightRequest="50"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+            Type=RelativeToView,
+            ElementName=banner,
+            Property=Height,
+            Factor=1,
+            Constant=-20}"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.5,
+            Constant=-25}"
+                 />
+    </RelativeLayout>-->
+    <AbsoluteLayout>
+        <BoxView BackgroundColor="Yellow" AbsoluteLayout.LayoutBounds="0,0,1,0.3" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        <BoxView BackgroundColor="Aqua" AbsoluteLayout.LayoutBounds="0.5,0.5,50,50" AbsoluteLayout.LayoutFlags="PositionProportional" />
+    </AbsoluteLayout>
+</ContentPage>
