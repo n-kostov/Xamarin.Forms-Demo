@@ -3,18 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XamarinDemo"
              x:Class="XamarinDemo.MainPage">
-    <ContentPage.BackgroundColor>
-        <OnPlatform x:TypeArguments="Color" Android="Silver"  />
-    </ContentPage.BackgroundColor>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="{Binding LabelText}" VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+            <Label BindingContext="{x:Reference txt}" Text="{Binding Text}" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Source={x:Reference txt}, Path=Text, StringFormat='Text is {0}'}"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="Start"
-                HorizontalTextAlignment="Center"
-                TextColor="Yellow"
-                Font="30"
-                IsVisible="True"/>
+                HorizontalOptions="CenterAndExpand" />
+            <Editor x:Name="txt" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

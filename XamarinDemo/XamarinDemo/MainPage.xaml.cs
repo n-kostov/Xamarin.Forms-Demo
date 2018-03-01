@@ -9,40 +9,13 @@ namespace XamarinDemo
 {
     public partial class MainPage : ContentPage
     {
+        public string LabelText { get; set; }
         public MainPage()
         {
             InitializeComponent();
 
-            var stack = new StackLayout();
-            Content = stack;
-
-            stack.Children.Add(new Label()
-            {
-                Text = "From code",
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-                HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Yellow,
-                FontSize = 30,
-                IsVisible = true
-            });
-
-            Padding = Device.OnPlatform(iOS: new Thickness(), 
-                Android: new Thickness(0, 10, 0, 0), 
-                WinPhone: new Thickness(0, 20, 0, 0));
-
-            Thickness padding;
-            switch(Device.RuntimePlatform)
-            {
-                case Device.Android:
-                    padding = new Thickness(0, 10, 0, 0);
-                    break;
-                default:
-                    padding = new Thickness();
-                    break;
-            }
-
-            Padding = padding;
+            LabelText = "Binding from code";
+            BindingContext = this;
         }
     }
 }
