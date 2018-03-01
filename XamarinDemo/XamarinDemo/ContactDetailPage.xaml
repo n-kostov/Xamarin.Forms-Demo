@@ -3,18 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinDemo.ContactDetailPage"
              xmlns:local="clr-namespace:XamarinDemo">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="save.png" Command="{Binding SaveCommand}" />
+    </ContentPage.ToolbarItems>
     
     <TableView Intent="Form">
         <TableRoot>
             <TableSection Title="Profile">
-                <EntryCell Label="DisplayName" Text="{Binding DisplayName}" />
-                <EntryCell Label="Name" Text="{Binding Name}" />
-                <EntryCell Label="Description" Text="{Binding Description}" />
+                <EntryCell Label="DisplayName" Text="{Binding Contact.DisplayName}" />
+                <EntryCell Label="Name" Text="{Binding Contact.Name}" />
+                <EntryCell Label="Description" Text="{Binding Contact.Description}" />
             </TableSection>
             <TableSection Title="Contact Details">
-                <EntryCell Label="Phone Number" Text="{Binding PhoneNumber}" Keyboard="Telephone" />
-                <local:DateCell Date="{Binding DateOfBirth}" />
-                <SwitchCell Text="Is Colleague" On="{Binding IsColleague}" />
+                <EntryCell Label="Phone Number" Text="{Binding Contact.PhoneNumber}" Keyboard="Telephone" />
+                <local:DateCell Date="{Binding Contact.DateOfBirth}" />
+                <SwitchCell Text="Is Colleague" On="{Binding Contact.IsColleague}" />
             </TableSection>
         </TableRoot>
     </TableView>

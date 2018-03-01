@@ -37,11 +37,8 @@ namespace XamarinDemo
             }
 
             var contact = e.SelectedItem as Contact;
-            ContactDetailPage detailPage = new ContactDetailPage(contact);
-            detailPage.ContactAdded += async (s, contactArgs) =>
-            {
-                await _contactService.SaveContact(contact);
-            };
+            ContactDetailPage detailPage = new ContactDetailPage(new ViewModels.ContactViewModel());
+
             await Navigation.PushAsync(detailPage);
 
             contactsListView.SelectedItem = null;
@@ -49,7 +46,7 @@ namespace XamarinDemo
 
         private async void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
-            if (contactSearchBar.Text.Length >= 3)
+            if (contactSearchBar.Text.Length > 3)
             {
                 searchingIndricator.IsRunning = true;
                 contactsListView.ItemsSource = await _contactService.FindNewContacts(contactSearchBar.Text);

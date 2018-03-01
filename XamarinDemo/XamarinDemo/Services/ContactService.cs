@@ -21,7 +21,7 @@ namespace XamarinDemo.Services
             _connection.CreateTableAsync<Contact>();
         }
 
-        public async Task<ObservableCollection<Contact>> GetContacts(string searchQuery = null)
+        public async Task<List<Contact>> GetContacts(string searchQuery = null)
         {
             var query = _connection.Table<Contact>();
             if (!string.IsNullOrWhiteSpace(searchQuery))
@@ -32,7 +32,7 @@ namespace XamarinDemo.Services
 
             var contacts = await query.ToListAsync();
 
-            return new ObservableCollection<Contact>(contacts);
+            return contacts;
         }
 
         public async Task<Contact> GetContact(int contactId)

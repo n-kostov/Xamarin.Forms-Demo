@@ -8,11 +8,21 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="Blue" />
+            </Style>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="WidthRequest" Value="100" />
+            </Style>
+            <Style x:Key="passwordEntryStyle" TargetType="Entry" BasedOn="{StaticResource entryStyle}">
+                <Setter Property="IsPassword" Value="True" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <AbsoluteLayout>
-        <ActivityIndicator x:Name="indicator" Color="Blue"
+        <ActivityIndicator x:Name="indicator"
             AbsoluteLayout.LayoutBounds="0.5, 0.5, 50, 50"
             AbsoluteLayout.LayoutFlags="PositionProportional" />
         <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
@@ -22,14 +32,12 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="Username" VerticalOptions="Center" />
                 <Entry x:Name="usernameEntry" Placeholder="Username" 
-                   HorizontalOptions="EndAndExpand"
-                   WidthRequest="100" />
+                   Style="{StaticResource entryStyle}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Password" VerticalOptions="Center" />
                 <Entry x:Name="passwordEntry" Placeholder="Password" 
-                   HorizontalOptions="EndAndExpand"
-                   IsPassword="true" WidthRequest="100" />
+                   Style="{StaticResource passwordEntryStyle}" />
             </StackLayout>
             <Label x:Name="errorLabel" WidthRequest="150" TextColor="Red" />
             <Button Text="Login" TextColor="White" BackgroundColor="Green" 

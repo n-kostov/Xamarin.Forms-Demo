@@ -2,29 +2,30 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinDemo.Services;
+using XamarinDemo.ViewModels;
 
 namespace XamarinDemo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactDetailPage : ContentPage
     {
-        private Contact _contact;
-        public event EventHandler<ContactEventArgs> ContactAdded;
-        public ContactDetailPage(Contact contact)
+        public ContactDetailPage(ContactViewModel contact)
         {
-            _contact = contact ?? throw new ArgumentNullException();
-            BindingContext = _contact;
+            if(contact == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            IPageService pageService = new PageService();
+            string accessToken = (Application.Current as App).AccessToken;
+            ContactEditViewModel contactVM = new ContactEditViewModel(Navigation, pageService, accessToken)
+            {
+                Contact = contact
+            };
+            BindingContext = contactVM;
 
             InitializeComponent();
-
-            ToolbarItems.Add(new ToolbarItem("Add", "save.png", () => OnContactAdded(this, new ContactEventArgs(_contact)),
-                ToolbarItemOrder.Primary));
-        }
-
-        private async void OnContactAdded(object sender, ContactEventArgs e)
-        {
-            ContactAdded?.Invoke(this, e);
-            await Navigation.PopAsync();
         }
     }
 }
