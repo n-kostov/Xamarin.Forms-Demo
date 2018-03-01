@@ -13,7 +13,7 @@ namespace XamarinDemo
         {
             InitializeComponent();
 
-            MainPage = new FormPage();
+            MainPage = new HomePage();
             //MainPage.Navigation.PushModalAsync(new LoginPage());
         }
 

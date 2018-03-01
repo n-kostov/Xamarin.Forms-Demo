@@ -5,7 +5,6 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Icon="plus.png" Order="Primary" Activated="PlusToolbarItem_Activated"></ToolbarItem>
-        <ToolbarItem Text="Create" Icon="plus.png" Order="Secondary" Activated="PlusToolbarItem_Activated"></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
