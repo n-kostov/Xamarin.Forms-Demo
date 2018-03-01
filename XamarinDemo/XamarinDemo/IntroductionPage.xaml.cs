@@ -19,6 +19,7 @@ namespace XamarinDemo
 
         private async void GetStarted_Clicked(object sender, EventArgs e)
         {
+            (Application.Current as App).HasReadIntroduction = true;
             await Navigation.PopModalAsync();
         }
     }

@@ -9,12 +9,13 @@ namespace XamarinDemo
 {
     public partial class App : Application
     {
+        private static readonly string HasReadIntroductionString = "HasReadIntroduction";
         public App()
         {
             InitializeComponent();
 
             MainPage = new HomePage();
-            //MainPage.Navigation.PushModalAsync(new LoginPage());
+            MainPage.Navigation.PushModalAsync(new LoginPage());
         }
 
         protected override void OnStart()
@@ -30,6 +31,23 @@ namespace XamarinDemo
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public bool HasReadIntroduction
+        {
+            get
+            {
+                if (Properties.ContainsKey(HasReadIntroductionString))
+                {
+                    return (bool)Properties[HasReadIntroductionString];
+                }
+
+                return false;
+            }
+            set
+            {
+                Properties[HasReadIntroductionString] = value;
+            }
         }
     }
 }
